@@ -13,10 +13,28 @@ const createDepoiment = async (depoiment) => {
 
     const [createdDepoiment] = await connection.execute(insertQuerry, [nome, email, ocupacao, depoimento]);
 
-    return createdDepoiment;
+    return {insertId: createdDepoiment.insertId};
+}
+
+const deleteDepoiments = async (id) => {
+    const deleteQuerry = 'DELETE FROM depoiments WHERE id = ?';
+    const removedDepoiment = await connection.execute(deleteQuerry, [id]);
+    return removedDepoiment;
+}
+
+const updateDepoiments = async (id, depoiment) => {
+    const updateQuerry = 'UPDATE depoiments SET nome = ?, email = ?, ocupacao = ?, depoimento = ? WHERE id = ?';
+
+    const { nome, email, ocupacao, depoimento} = depoiment;
+
+    const updatedDepoiment = await connection.execute(updateQuerry, [nome, email, ocupacao, depoimento, id]);
+
+    return updatedDepoiment;
 }
 
 module.exports = {
     getAll,
-    createDepoiment
+    createDepoiment,
+    deleteDepoiments,
+    updateDepoiments
 }
