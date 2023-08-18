@@ -27,10 +27,19 @@ const updateDepoiment = async (req, res) => {
     return res.status(204).json();
 }
 
+const getOne = async (req, res) => {
+    const { id } = req.params;
+
+    const getOneResponse = await depoimentsModel.getOne(id);
+
+    return res.status(200).json(getOneResponse);
+}
+
 module.exports = {
     getAll,
     createDepoiment,
     deleteDepoiment,
-    updateDepoiment
+    updateDepoiment,
+    getOne
 }
 

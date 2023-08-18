@@ -32,9 +32,16 @@ const updateDepoiments = async (id, depoiment) => {
     return updatedDepoiment;
 }
 
+const getOne = async (id) => {
+    const getOneQuerry = 'SELECT nome, email, ocupacao, depoimento, created_at, updated_at FROM depoiments WHERE id = ?;';
+    const [getOneDepoiment] = await connection.execute(getOneQuerry, [id]);
+    return getOneDepoiment;
+}
+
 module.exports = {
     getAll,
     createDepoiment,
     deleteDepoiments,
-    updateDepoiments
+    updateDepoiments,
+    getOne
 }
