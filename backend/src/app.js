@@ -1,19 +1,19 @@
 const express = require('express');
 const router = require('./router');
-const handlebars = require('express-handlebars');
+// const handlebars = require('express-handlebars');
 
-const app = express();
+// const app = express();
 
-app.engine('handlebars', handlebars.engine({
-    defaultLayout: 'main',
-    runtimeOptions: {
-        allowProtoPropertiesByDefault: true,
+// app.engine('handlebars', handlebars.engine({
+//     defaultLayout: 'main',
+//     runtimeOptions: {
+//         allowProtoPropertiesByDefault: true,
 
-        allowProtoMethodsByDefault: true,
-    }
-}));
+//         allowProtoMethodsByDefault: true,
+//     }
+// }));
 
-app.set('view engine', 'handlebars');
+// app.set('view engine', 'handlebars');
 
 app.use(express.static('./'));
 app.use(express.json());
