@@ -1,4 +1,3 @@
-const { response } = require("express");
 const depoimentsModel = require("../models/depoimentsModel");
 
 const getAll = async (req, res) => {
