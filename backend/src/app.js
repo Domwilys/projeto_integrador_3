@@ -2,7 +2,7 @@ const express = require('express');
 const router = require('./router');
 // const handlebars = require('express-handlebars');
 
-// const app = express();
+const app = express();
 
 // app.engine('handlebars', handlebars.engine({
 //     defaultLayout: 'main',
