@@ -12,6 +12,6 @@ router.post('/depoiments', middlewares.validateBody, depoimentsController.create
 router.delete('/depoiments/:id', depoimentsController.deleteDepoiment);
 router.put('/depoiments/:id', middlewares.validateBody, depoimentsController.updateDepoiment);
 
-// router.get('/index', function(req, res) {
-//     res.render('index');
-// });
+router.get('/index', function(req, res) {
+    res.render('index');
+});
