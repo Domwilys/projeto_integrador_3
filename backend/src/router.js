@@ -7,7 +7,7 @@ const router = express.Router();
 module.exports = router;
 
 router.get('/depoiments', depoimentsController.getAll);
-router.get('/depoiments/:id', depoimentsController.getOne);
+router.get('/depoiments/:id', depoimentsController.getOne); 
 router.post('/depoiments', middlewares.validateBody, depoimentsController.createDepoiment);
 router.delete('/depoiments/:id', depoimentsController.deleteDepoiment);
 router.put('/depoiments/:id', middlewares.validateBody, depoimentsController.updateDepoiment);
