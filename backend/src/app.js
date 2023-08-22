@@ -1,6 +1,7 @@
 const express = require('express');
 const router = require('./router');
 const handlebars = require('express-handlebars');
+const path = require('path');
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.engine('handlebars', handlebars.engine({
 }));
 
 app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static('./'));
 app.use(express.static('./views'));
