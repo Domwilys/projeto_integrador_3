@@ -16,6 +16,7 @@ app.engine('handlebars', handlebars.engine({
 app.set('view engine', 'handlebars');
 
 app.use(express.static('./'));
+app.use(express.static('./views'));
 app.use(express.json());
 app.use(router);
 
