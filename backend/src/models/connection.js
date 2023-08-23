@@ -5,6 +5,8 @@ const connection = mysql.createPool({
     user: "root",
     password: "root",
     database: "depoimentsStorage"
-})
+});
 
-module.exports = connection;
+module.exports = {
+    connection
+}
